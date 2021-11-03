@@ -12,14 +12,12 @@ import { ThemeProvider } from "@mui/material";
 import MuiTheme from "Mui/Theme";
 
 ReactDOM.render(
-  <React.StrictMode>
-    <ThemeProvider theme={MuiTheme}>
-      <QueryClientProvider client={ReactQueryClient}>
-        <CssBaseline />
-        <App />
-      </QueryClientProvider>
-    </ThemeProvider>
-  </React.StrictMode>,
+  <ThemeProvider theme={MuiTheme}>
+    <QueryClientProvider client={ReactQueryClient}>
+      <CssBaseline />
+      <App />
+    </QueryClientProvider>
+  </ThemeProvider>,
   document.getElementById("root"),
 );
 

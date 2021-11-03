@@ -20,6 +20,7 @@ export type StudentDataType = {
   prepaidedMonths: number;
   dayOfPayment: number;
   actualMentor: string;
+  tookAbreak: boolean;
 };
 
 export type ApiResponseType = {

@@ -20,6 +20,7 @@ import TableBody from "@mui/material/TableBody";
 import TablePagination from "@mui/material/TablePagination";
 import Typography from "@mui/material/Typography";
 import TableFooter from "@mui/material/TableFooter";
+import Checkbox from "@mui/material/Checkbox";
 
 const StudentsView = () => {
   const [page, setPage] = React.useState<number>(0);
@@ -67,6 +68,9 @@ const StudentsView = () => {
     {
       title: "Mentor",
     },
+    {
+      title: isXs ? "Przerwa" : "Chwilowa przerwa",
+    },
   ];
 
   const isAnyRowDisplayed = rows.length >= 1;
@@ -106,6 +110,7 @@ const StudentsView = () => {
                     formOfPayment,
                     prepaidedMonths,
                     actualMentor,
+                    tookAbreak,
                   },
                   index,
                 ) => (
@@ -140,6 +145,9 @@ const StudentsView = () => {
                     </TableCell>
                     <TableCell sx={isXs ? { width: 150 } : {}} variant="body" align="center">
                       {actualMentor ? actualMentor : "Brak Mentora"}
+                    </TableCell>
+                    <TableCell variant="body" align="center">
+                      <Checkbox size="small" checked={tookAbreak} />
                     </TableCell>
                   </TableRow>
                 ),
