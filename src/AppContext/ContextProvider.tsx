@@ -77,7 +77,7 @@ const ContextProvider: React.FC = ({ children }) => {
   const { data, isLoading, refetch, isRefetching } = useQuery("mainDataFetch", {
     queryFn: async () => {
       try {
-        const { data } = await axios.get<ApiResponseType>(`${apiUrl}`);
+        const { data } = await axios.get<ApiResponseType>(`${apiUrl}/summary`);
         return data;
       } catch (e) {
         throw e;
